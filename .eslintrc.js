@@ -76,7 +76,7 @@ module.exports = {
 		"no-return-assign": "error",
 		"no-sequences": "error",
 		"no-undef-init": "error",
-		"no-underscore-dangle": "error",
+		"no-underscore-dangle": ["error", { allow: ["_raw", "_id"] }],
 		"no-unneeded-ternary": "error",
 		"no-useless-call": "error",
 		"no-useless-computed-key": "error",

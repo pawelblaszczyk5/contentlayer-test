@@ -10,7 +10,9 @@
 		"update-dependencies": "taze major -I -r -w "
 	},
 	"dependencies": {
+		"contentlayer": "^0.3.3",
 		"next": "^13.4.5-canary.6",
+		"next-contentlayer": "^0.3.3",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"tailwindcss": "^3.3.2"
