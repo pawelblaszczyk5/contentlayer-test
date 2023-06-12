@@ -4,6 +4,11 @@ import { TestRSC } from "@/components/test-rsc";
 import { TestRSCWithClient } from "@/components/test-rsc-with-client";
 import { allPosts } from "contentlayer/generated";
 
+export const generateStaticParams = () =>
+	allPosts.map(({ _raw: { flattenedPath } }) => ({
+		slug: flattenedPath,
+	}));
+
 const PostPage = ({ params }: { params: { slug: string } }) => {
 	const post = allPosts.find(post => post._raw.flattenedPath === params.slug);
 
