@@ -1,7 +1,5 @@
 import { allPosts } from "contentlayer/generated";
 
-export const runtime = "experimental-edge";
-
 const HomePage = () => (
 	<div>
 		{allPosts.map(post => (

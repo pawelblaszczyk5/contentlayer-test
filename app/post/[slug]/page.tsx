@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import { getMDXComponent } from "next-contentlayer/hooks";
+import { TestRSC } from "@/components/test-rsc";
+import { TestRSCWithClient } from "@/components/test-rsc-with-client";
 import { allPosts } from "contentlayer/generated";
 
 const PostPage = ({ params }: { params: { slug: string } }) => {
@@ -16,9 +18,10 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
 					{post.date}
 				</time>
 				<h1 className="text-3xl font-bold">{post.title}</h1>
+				<h2>Paweł Błaszczyk</h2>
 			</div>
 			<div className="prose">
-				<MDXContent />
+				<MDXContent components={{ TestRSC, TestRSCWithClient }} />
 			</div>
 		</article>
 	);
