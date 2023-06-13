@@ -4,6 +4,8 @@ import { TestRSC } from "@/components/test-rsc";
 import { TestRSCWithClient } from "@/components/test-rsc-with-client";
 import { allPosts } from "contentlayer/generated";
 
+export const revalidate = 30;
+
 export const generateStaticParams = () =>
 	allPosts.map(({ _raw: { flattenedPath } }) => ({
 		slug: flattenedPath,
@@ -23,7 +25,7 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
 					{post.date}
 				</time>
 				<h1 className="text-3xl font-bold">{post.title}</h1>
-				<h2>Paweł Błaszczyk</h2>
+				<h2>Paweł Błaszczyk{Math.random()}</h2>
 			</div>
 			<div className="prose">
 				<MDXContent components={{ TestRSC, TestRSCWithClient }} />
